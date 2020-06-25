@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using crudelicious.Models
+@model List<Dish>
+<style>
+    .jumbotron{
+            background-image: url("img/foody2.png");
+            background-size: cover;
+            text-align: center;
+        }
+    .card{
+        display: inline-block;
+    }
+
+</style>
+<div class="jumbotron">
+    <h1 class="display-4 text-info">crudelicious.</h1>
+</div>
+
+<table class="table-striped table">
+    <thead>
+        <tr>
+            <th>Dish</th>
+            <th>Chef</th>
+            <th>Tastiness</th>
+            <th>Calories</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Dish dish in Model)
+        {
+            <tr>
+                <td><a class="text-info" href="/@dish.id">@dish.Name</a></td>
+                <td>@dish.Chef</td>
+                <td>@dish.Tastiness</td>
+                <td>@dish.Calories</td>
+                <td>@dish.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

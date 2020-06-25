@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using crudelicious.Models
+@model Dish
+
+<div class="row">
+    <div class="offset-sm-3 col-sm-6">
+
+        <form asp-action="Process" method="post" class="card">
+            <div class="card-header bg-info text-white">
+                Add a Dish:
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label asp-for="Name">Dish Name: </label>
+                    <input asp-for="Name" class="form-control">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Chef">Chef: </label>
+                    <input asp-for="Chef" class="form-control">
+                    <span class="text-danger" asp-validation-for="Chef"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Tastiness">Tastiness: </label>
+                    <select type="number" asp-for="Tastiness" class="form-control">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <span class="text-danger" asp-validation-for="Tastiness"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Calories">Calories: </label>
+                    <input asp-for="Calories" class="form-control">
+                    <span class="text-danger" asp-validation-for="Calories"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description: </label>
+                    <input asp-for="Description" class="form-control">
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+                <input type="submit" class="btn btn-info" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
